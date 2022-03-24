@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { SheetPage } from '../sheet/sheet.page';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(private modalCtr: ModalController) {}
+
+  async add(){
+    const modal = await  this.modalCtr.create({
+      component: SheetPage,
+      breakpoints: [0.5],
+      initialBreakpoint: 0.5,
+      handle: false
+    });
+    await modal.present();
+  }
 
 }

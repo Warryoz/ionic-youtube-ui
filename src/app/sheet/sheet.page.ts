@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sheet',
@@ -7,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SheetPage implements OnInit {
 
-  constructor() { }
+  items = [
+    {
+      text: 'Create a Short',
+      icon: 'videocam-outline',
+    },
+    {
+      text: 'Upload a video',
+      icon: 'push-outline',
+    },
+    {
+      text: 'Go live',
+      icon: 'radio-outline',
+    },
+    {
+      text: 'Add to your story',
+      icon: 'add-circle-outline',
+    },
+    {
+      text: 'Create a post',
+      icon: 'create-outline',
+    },
+  ];
+
+  constructor(private modalCtr: ModalController) { }
 
   ngOnInit() {
+  }
+
+  dismiss(){
+    this.modalCtr.dismiss();
   }
 
 }
