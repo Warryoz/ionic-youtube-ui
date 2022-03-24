@@ -6,7 +6,7 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './sheet.page.html',
   styleUrls: ['./sheet.page.scss'],
 })
-export class SheetPage implements OnInit {
+export class SheetPage{
 
   items = [
     {
@@ -32,9 +32,6 @@ export class SheetPage implements OnInit {
   ];
 
   constructor(private modalCtr: ModalController) { }
-
-  ngOnInit() {
-  }
 
   dismiss(){
     this.modalCtr.dismiss();
